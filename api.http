@@ -1,0 +1,32 @@
+POST http://localhost:3000/projetos/
+Content-Type: application/json
+
+{
+      "titulo": "Projeto 3",
+      "descricao": "Descrição da projeto 3",
+      "periodo": 2,
+      "cursos": [6, 8, 10],
+      "cr": 5.0
+}
+
+
+###
+PUT http://localhost:3000/projetos/2
+Content-Type: application/json
+
+{
+      "titulo": "Projeto 2",
+      "descricao": "Descrição da projeto 2",
+      "periodo": 5,
+      "cursos": [6, 8, 10],
+      "cr": 7.0
+}
+
+###
+GET http://localhost:3000/projetos/
+
+###
+GET http://localhost:3000/projetos/2
+
+###
+DELETE  http://localhost:3000/projetos/1

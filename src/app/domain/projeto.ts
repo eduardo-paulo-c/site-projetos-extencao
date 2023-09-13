@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 export interface IProjeto {
   id?: number;
   titulo?: string;
