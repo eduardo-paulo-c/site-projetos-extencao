@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Controller, Body, Post, Put, Param, Get, Delete } from '@nestjs/common';
-import { IProfessor } from '../domain/professor';
+import { IProfessor } from '../domain/professor.entity';
 import { ProfessorService } from '../services/professor.service';
 
 @Controller('/professores')

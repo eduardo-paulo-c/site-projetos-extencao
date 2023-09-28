@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
-import { IProfessor } from '../domain/professor';
+import { IProfessor } from '../domain/professor.entity';
 
 @Injectable()
 export class ProfessorService {

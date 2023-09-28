@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
-import { IProjeto } from '../domain/projeto';
+import { IProjeto } from '../domain/projeto.entity';
 
 @Injectable()
 export class ProjetoService {

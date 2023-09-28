@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Controller, Body, Post, Param, Put, Get, Delete } from '@nestjs/common';
 import { ProjetoService } from '../services/projeto.service';
-import { IProjeto } from '../domain/projeto';
+import { IProjeto } from '../domain/projeto.entity';
 @Controller('/projetos')
 export class ProjetoController {
   constructor(private readonly projetoService: ProjetoService) { }
