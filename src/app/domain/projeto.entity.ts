@@ -1,11 +1,12 @@
 /* eslint-disable prettier/prettier */
 
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, JoinColumn, ManyToOne } from 'typeorm';
+import { Professor } from './professor.entity';
 
 @Entity()
 export class Projeto {
   @PrimaryGeneratedColumn()
-  id: number;
+  idprojeto: number;
 
   @Column({ length: 100 })
   titulo: string;
@@ -21,4 +22,8 @@ export class Projeto {
 
   @Column()
   cr: number;
+
+  @ManyToOne(() => Professor, (professor) => professor.idprofessor)
+  @JoinColumn({ name: 'idprofessor' })
+  professor: Professor;
 }

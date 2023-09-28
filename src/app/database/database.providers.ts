@@ -12,7 +12,7 @@ export const databaseProviders = [
         port: 3306,
         username: 'root',
         password: 'Math@1311C99',
-        database: 'teste',
+        database: 'pj_extencao_teste',
         entities: [
             __dirname + '/../**/*.entity{.ts,.js}',
         ],

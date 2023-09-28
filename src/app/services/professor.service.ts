@@ -1,56 +1,40 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from '@nestjs/common';
-import { IProfessor } from '../domain/professor.entity';
+import { Injectable, Inject } from '@nestjs/common';
+import { Repository } from 'typeorm';
+import { Professor } from '../domain/professor.entity';
 
 @Injectable()
 export class ProfessorService {
   
-  private static professores: IProfessor[] = [
-    {
-      id: 1,
-      cpf: '12345678910',
-      nome: 'Professor 01',
-      email: 'professor01@gmail.com',
-      senha: 'senha123',
-      idade: 24,
-    },
-    {
-      id: 2,
-      cpf: '12345678910',
-      nome: 'Professor 02',
-      email: 'professor02@gmail.com',
-      senha: 'senha123',
-      idade: 25,
-    },
-  ];
+  constructor(
+    @Inject('PROFESSOR_REPOSITORY')
+    private professorRepository: Repository<Professor>,
+  ) {}
 
-  async create(professor: IProfessor): Promise<IProfessor> {
-    professor.id = ProfessorService.professores.length + 1;
-    ProfessorService.professores.push(professor);
-    return professor;
+  async create(professor: Professor): Promise<Professor> {
+    return this.professorRepository.save(professor)
   }
 
-  async update(id: string, professor: IProfessor): Promise<IProfessor> {
-    professor.id = Number(id);
-    ProfessorService.professores = ProfessorService.professores.map((_professor) =>
-      _professor.id === Number(id) ? professor : _professor,
-    );
-    return professor;
+  async update(id: string, professor: Professor): Promise<Professor> {
+    const existingProfessor = await this.professorRepository.findOneBy({
+      idprofessor: Number(id),
+    });
+    existingProfessor.cpf = professor.cpf;
+    existingProfessor.nome = professor.nome;
+    existingProfessor.email = professor.email;
+    existingProfessor.senha = professor.senha;
+    return this.professorRepository.save(existingProfessor);
   }
 
-  async getAll(): Promise<IProfessor[]> {
-    return ProfessorService.professores;
+  async getAll(): Promise<Professor[]> {
+    return this.professorRepository.find()
   }
 
-  async get(id: string): Promise<IProfessor> {
-    return ProfessorService.professores.find(
-      (professor) => professor.id === Number(id),
-    );
+  async get(id: string): Promise<Professor> {
+    return this.professorRepository.findOneBy({ idprofessor: Number(id)} )
   }
 
   async delete(id: string): Promise<void> {
-    ProfessorService.professores = ProfessorService.professores.filter(
-      (_professor) => _professor.id !== Number(id),
-    );
+    this.professorRepository.delete({ idprofessor: Number(id)} )
   }
 }

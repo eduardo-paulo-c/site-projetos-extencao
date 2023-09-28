@@ -6,21 +6,22 @@ Content-Type: application/json
       "titulo": "Projeto 3",
       "descricao": "Descrição da projeto 3",
       "periodo": 2,
-      "cursos": "6, 8, 10",
-      "cr": 5.0
+      "cursos": "1, 4, 5",
+      "cr": 8.0
 }
 
 ###
-PUT http://localhost:3000/projetos/2
+PUT http://localhost:3000/projetos/1
 Content-Type: application/json
 
 {
       "titulo": "Projeto 2",
       "descricao": "Descrição da projeto 2",
       "periodo": 5,
-      "cursos": "6, 8, 10",
-      "cr": 7.0
+      "cursos": "6, 8, 12",
+      "cr": 6.0
 }
+
 
 ###
 GET http://localhost:3000/projetos/
@@ -42,24 +43,20 @@ Content-Type: application/json
 
 {   
       "cpf": "12345678910",
-      "nome": "Professor 03",
-      "email": "professor03@gmail.com",
-      "senha": "senha123",
-      "idade": 28.0
+      "nome": "Campos",
+      "email": "campos@gmail.com",
+      "senha": "senha123"
 }
-
 
 ###
 PUT http://localhost:3000/professores/2
 Content-Type: application/json
 
-{
-    
+{   
       "cpf": "12345678910",
-      "nome": "Professor 02",
-      "email": "professor02@gmail.com",
-      "senha": "senha1234",
-      "idade": 25
+      "nome": "Eduardo",
+      "email": "eduardo@gmail.com",
+      "senha": "senha123"
 }
 
 ###

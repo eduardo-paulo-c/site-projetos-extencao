@@ -3,9 +3,6 @@ import { Injectable, Inject } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Projeto } from '../domain/projeto.entity';
 
-
-
-
 @Injectable()
 export class ProjetoService {
   
@@ -20,7 +17,7 @@ export class ProjetoService {
 
   async update(id: string, projeto: Projeto): Promise<Projeto> {
     const existingProjeto = await this.projetoRepository.findOneBy({
-      id: Number(id),
+      idprojeto: Number(id),
     });
     existingProjeto.titulo = projeto.titulo;
     existingProjeto.descricao = projeto.descricao;
@@ -31,7 +28,7 @@ export class ProjetoService {
   }
 
   async get(id: string): Promise<Projeto> {
-    return this.projetoRepository.findOneBy({ id: Number(id)})
+    return this.projetoRepository.findOneBy({ idprojeto: Number(id)})
   }
 
 
@@ -40,6 +37,6 @@ export class ProjetoService {
   }
 
   async delete(id: string): Promise<void> {
-    this.projetoRepository.delete({ id: Number(id) });
+    this.projetoRepository.delete({ idprojeto: Number(id) });
   }
 }

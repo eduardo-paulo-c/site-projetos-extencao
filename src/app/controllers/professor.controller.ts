@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Controller, Body, Post, Put, Param, Get, Delete } from '@nestjs/common';
-import { IProfessor } from '../domain/professor.entity';
+import { Professor } from '../domain/professor.entity';
 import { ProfessorService } from '../services/professor.service';
 
 @Controller('/professores')
@@ -8,7 +8,7 @@ export class ProfessorController {
   constructor(private readonly professorService: ProfessorService) { }
 
   @Post()
-  createProfessor(@Body() professor: IProfessor): Promise<IProfessor> {
+  createProfessor(@Body() professor: Professor): Promise<Professor> {
     console.log('Requisicao para criar um professor');
     return this.professorService.create(professor);
   }
@@ -16,20 +16,20 @@ export class ProfessorController {
   @Put(':id')
   updateProfessor(
     @Param('id') id: string,
-    @Body() professor: IProfessor,
-  ): Promise<IProfessor> {
+    @Body() professor: Professor,
+  ): Promise<Professor> {
     console.log(`Requisicao para atualuzar professor ${id}`);
     return this.professorService.update(id, professor);
   }
 
   @Get()
-  getProfessors(): Promise<IProfessor[]> {
+  getProfessors(): Promise<Professor[]> {
     console.log('Requisicao para retornar todos os professores');
     return this.professorService.getAll();
   }
 
   @Get(':id')
-  getProfessor(@Param('id') id: string): Promise<IProfessor> {
+  getProfessor(@Param('id') id: string): Promise<Professor> {
     console.log(`Requisicao para retornar professor ${id}`);
     return this.professorService.get(id);
   }
