@@ -30,3 +30,41 @@ GET http://localhost:3000/projetos/2
 
 ###
 DELETE  http://localhost:3000/projetos/1
+
+
+
+
+###
+POST http://localhost:3000/professores/
+Content-Type: application/json
+
+{   
+      "cpf": "12345678910",
+      "nome": "Professor 03",
+      "email": "professor03@gmail.com",
+      "senha": "senha123",
+      "idade": 28.0
+}
+
+
+###
+PUT http://localhost:3000/professores/2
+Content-Type: application/json
+
+{
+    
+      "cpf": "12345678910",
+      "nome": "Professor 02",
+      "email": "professor02@gmail.com",
+      "senha": "senha1234",
+      "idade": 25
+}
+
+###
+GET http://localhost:3000/professores/
+
+###
+GET http://localhost:3000/professores/2
+
+###
+DELETE  http://localhost:3000/professores/2
