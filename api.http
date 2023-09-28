@@ -6,7 +6,7 @@ Content-Type: application/json
       "titulo": "Projeto 3",
       "descricao": "Descrição da projeto 3",
       "periodo": 2,
-      "cursos": [6, 8, 10],
+      "cursos": "6, 8, 10",
       "cr": 5.0
 }
 
@@ -18,7 +18,7 @@ Content-Type: application/json
       "titulo": "Projeto 2",
       "descricao": "Descrição da projeto 2",
       "periodo": 5,
-      "cursos": [6, 8, 10],
+      "cursos": "6, 8, 10",
       "cr": 7.0
 }
 
