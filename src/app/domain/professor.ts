@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
-import { IUsuario } from '../domain/usuario';
-
-export interface IProfessor extends IUsuario {
-  matricula_prof?: string;
+export interface IProfessor {
+  cpf?: string;
+  nome?: string;
+  email?: string;
+  senha?: string;
+  idade?: number;
 }
-  
