@@ -12,11 +12,11 @@ export const databaseProviders = [
         port: 3306,
         username: 'root',
         password: 'Math@1311C99',
-        database: 'pj_extencao_teste',
+        database: 'pj_extencao',
         entities: [
             __dirname + '/../**/*.entity{.ts,.js}',
         ],
-        synchronize: true,
+        synchronize: false,
       });
 
       return dataSource.initialize();

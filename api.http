@@ -3,11 +3,16 @@ POST http://localhost:3000/projetos/
 Content-Type: application/json
 
 {
-      "titulo": "Projeto 3",
-      "descricao": "Descrição da projeto 3",
-      "periodo": 2,
-      "cursos": "1, 4, 5",
-      "cr": 8.0
+      "titulo": "Projeto 2",
+      "descricao": "Descrição da projeto 2",
+      "periodo": 4,
+      "cursos": "4, 3, 8",
+      "cr": 7.0,
+      "Professor": [
+        {
+          "idprofessor": 1
+        }
+      ]
 }
 
 ###
@@ -15,11 +20,11 @@ PUT http://localhost:3000/projetos/1
 Content-Type: application/json
 
 {
-      "titulo": "Projeto 2",
-      "descricao": "Descrição da projeto 2",
+      "titulo": "Projeto 1",
+      "descricao": "Descrição da projeto 1",
       "periodo": 5,
       "cursos": "6, 8, 12",
-      "cr": 6.0
+      "cr": 9.0
 }
 
 
@@ -30,7 +35,7 @@ GET http://localhost:3000/projetos/
 GET http://localhost:3000/projetos/2
 
 ###
-DELETE  http://localhost:3000/projetos/1
+DELETE  http://localhost:3000/projetos/2
 
 
 
@@ -43,8 +48,8 @@ Content-Type: application/json
 
 {   
       "cpf": "12345678910",
-      "nome": "Campos",
-      "email": "campos@gmail.com",
+      "nome": "Paulo",
+      "email": "paulo@gmail.com",
       "senha": "senha123"
 }
 
@@ -66,4 +71,4 @@ GET http://localhost:3000/professores/
 GET http://localhost:3000/professores/2
 
 ###
-DELETE  http://localhost:3000/professores/2
+DELETE  http://localhost:3000/professores/3

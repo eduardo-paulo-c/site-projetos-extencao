@@ -23,7 +23,7 @@ export class Projeto {
   @Column()
   cr: number;
 
-  @ManyToOne(() => Professor, (professor) => professor.idprofessor)
+  @ManyToOne(() => Professor, (professor) => professor.projetos)
   @JoinColumn({ name: 'idprofessor' })
   professor: Professor;
 }
